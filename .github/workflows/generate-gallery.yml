@@ -1,0 +1,32 @@
+name: Generate Gallery JSON
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'portfolio/**'
+      - '.github/workflows/generate-gallery.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Run image generator
+        run: node assets/scripts/generate-gallery.js
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add assets/scripts/gallery/*.json
+          git diff --cached --quiet || git commit -m "Auto-generate gallery JSON"
+          git push
