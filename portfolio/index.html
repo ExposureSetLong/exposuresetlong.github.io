@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Exposure Set Long</title>
+  <link rel="canonical" href="https://exposuresetlong.com/portfolio/" />
+  <meta name="description" content="Explore categories like landscapes, cityscapes, astrophotography and more." />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Fira Sans', sans-serif;
+      background: #111;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      background: #111;
+    }
+
+    .nav-left a,
+    .nav-right a {
+      color: white;
+      text-decoration: none;
+      margin-right: 20px;
+      font-weight: 100;
+    }
+
+    .nav-left a.active {
+      font-weight: bold;
+    }
+
+    .nav-center img {
+      height: 40px;
+    }
+
+    .nav-right a {
+      font-size: 1.2em;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 50px 20px 30px;
+    }
+
+    .hero h1 {
+      font-size: 2.5em;
+      font-weight: 100;
+    }
+
+    .hero p {
+      font-size: 1.1em;
+      color: #aaa;
+      font-weight: 100;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .grid-item {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .grid-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: grayscale(100%);
+      transition: filter 0.4s ease;
+    }
+
+    .grid-item:hover img {
+      filter: grayscale(0%);
+    }
+
+    .grid-item span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.4em;
+      color: white;
+      text-shadow: 0 0 5px #000;
+      font-weight: bold;
+      pointer-events: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-left">
+      <a href="/portfolio/" class="active">Portfolio</a>
+      <a href="/contact/">Contact</a>
+      <a href="/about/">About</a>
+    </div>
+    <div class="nav-center">
+      <a href="/"><img src="/assets/media/signature-logo.png" alt="Home" /></a>
+    </div>
+    <div class="nav-right">
+      <a href="https://facebook.com/ExposureSetLong" target="_blank" rel="noopener">f</a>
+      <a href="https://www.instagram.com/exposuresetlong/" target="_blank" rel="noopener">📷</a>
+      <a href="https://www.flickr.com/photos/exposuresetlong/" target="_blank" rel="noopener">🌐</a>
+    </div>
+  </header>
+
+  <!-- Hero text -->
+  <section class="hero">
+    <h1>Portfolio</h1>
+    <p>Click on a category to discover more</p>
+  </section>
+
+<!-- Thumbnails -->
+<section class="grid">
+  <a class="grid-item" href="/portfolio/landscapes/">
+    <img src="/assets/media/landscapes-thumb.jpg" alt="Landscapes">
+    <span>Landscapes</span>
+  </a>
+  <a class="grid-item" href="/portfolio/astrophotography/">
+    <img src="/assets/media/astrophotography-thumb.jpg" alt="Astrophotography">
+    <span>Astrophotography</span>
+  </a>
+  <a class="grid-item" href="/portfolio/cityscapes/">
+    <img src="/assets/media/cityscapes-thumb.jpg" alt="Cityscapes">
+    <span>Cityscapes</span>
+  </a>
+  <a class="grid-item" href="/portfolio/nature/">
+    <img src="/assets/media/nature-thumb.jpg" alt="Nature">
+    <span>Nature</span>
+  </a>
+  <a class="grid-item" href="/portfolio/shotonphone/">
+    <img src="/assets/media/shotonphone-thumb.jpg" alt="Shot On Phone">
+    <span>Shot On Phone</span>
+  </a>
+</section>
+
+  <!-- Footer -->
+  <footer>
+    © Yogesh Mhatre — Exposure Set Long
+  </footer>
+
+</body>
+</html>
