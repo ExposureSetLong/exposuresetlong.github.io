@@ -1,0 +1,14 @@
+{
+  "name": "gallery-generator",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "generate-gallery.js",
+  "scripts": {
+    "generate": "node generate-gallery.js"
+  },
+  "dependencies": {
+    "exiftool-vendored": "^19.0.0",
+    "fs-extra": "^11.2.0",
+    "path": "^0.12.7"
+  }
+}
