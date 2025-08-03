@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landscapes | Exposure Set Long</title>
+  <link rel="canonical" href="https://exposuresetlong.com/portfolio/landscapes/" />
+  <meta name="description" content="Landscapes from around the world by Yogesh Mhatre." />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- LightGallery CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css">
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Fira Sans', sans-serif;
+      background: #111;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: #111;
+    }
+
+    .nav-left a,
+    .nav-right a {
+      color: white;
+      text-decoration: none;
+      margin-right: 20px;
+      font-weight: 100;
+    }
+
+    .nav-left a.active {
+      font-weight: bold;
+    }
+
+    .nav-center img {
+      height: 40px;
+    }
+
+    .nav-right a {
+      font-size: 1.2em;
+      margin-left: 12px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 40px 20px 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.8em;
+      font-weight: 700;
+    }
+
+    #gallery {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 10px;
+    }
+
+    #gallery a img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .you-may-also-like {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .grid-item {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .grid-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: grayscale(100%);
+      transition: filter 0.4s ease;
+    }
+
+    .grid-item:hover img {
+      filter: grayscale(0%);
+    }
+
+    .grid-item span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.4em;
+      color: white;
+      text-shadow: 0 0 5px #000;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-left">
+      <a href="/portfolio/">Portfolio</a>
+      <a href="/contact/">Contact</a>
+      <a href="/about/">About</a>
+    </div>
+    <div class="nav-center">
+      <a href="/"><img src="/assets/media/signature-logo.png" alt="Home" /></a>
+    </div>
+    <div class="nav-right">
+      <a href="https://facebook.com/ExposureSetLong" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/exposuresetlong/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.flickr.com/photos/exposuresetlong/" target="_blank"><i class="fab fa-flickr"></i></a>
+    </div>
+  </header>
+
+  <!-- Page Title -->
+  <section class="hero">
+    <h1>Landscapes</h1>
+  </section>
+
+  <!-- LightGallery Grid -->
+  <div id="gallery" class="lightgallery"></div>
+
+  <!-- You may also like -->
+  <section class="you-may-also-like">
+    <h2>You may also like</h2>
+    <div class="grid">
+      <a class="grid-item" href="/portfolio/astrophotography/">
+        <img src="/assets/media/astrophotography-thumb.jpg" alt="Astrophotography">
+        <span>Astrophotography</span>
+      </a>
+      <a class="grid-item" href="/portfolio/cityscapes/">
+        <img src="/assets/media/cityscapes-thumb.jpg" alt="Cityscapes">
+        <span>Cityscapes</span>
+      </a>
+      <a class="grid-item" href="/portfolio/nature/">
+        <img src="/assets/media/nature-thumb.jpg" alt="Nature">
+        <span>Nature</span>
+      </a>
+      <a class="grid-item" href="/portfolio/shotonphone/">
+        <img src="/assets/media/shotonphone-thumb.jpg" alt="Shot On Phone">
+        <span>Shot On Phone</span>
+      </a>
+      <a class="grid-item" href="/portfolio/portraits/">
+        <img src="/assets/media/portraits-thumb.jpg" alt="Portraits">
+        <span>Portraits</span>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    © Yogesh Mhatre — Exposure Set Long
+  </footer>
+
+  <!-- LightGallery JS -->
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
+  <script>
+    const galleryEl = document.getElementById('gallery');
+
+    fetch('/assets/scripts/gallery/landscape.json')
+      .then(res => res.json())
+      .then(images => {
+        images.forEach(img => {
+          const a = document.createElement('a');
+          a.href = `/portfolio/landscapes/images/${img}`;
+          a.dataset.src = a.href;
+          a.dataset.subHtml = `<h4>${img}</h4>`;
+          a.innerHTML = `<img src="${a.href}" alt="${img}" />`;
+          galleryEl.appendChild(a);
+        });
+        lightGallery(galleryEl, { plugins: [lgZoom], selector: 'a' });
+      });
+  </script>
+</body>
+</html>
