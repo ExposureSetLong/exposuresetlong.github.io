@@ -6,6 +6,14 @@ on:
       - 'portfolio/**/images/**'
       - 'assets/scripts/generate-gallery.js'
       - 'assets/scripts/package.json'
+  workflow_dispatch:
+
+on:
+  push:
+    paths:
+      - 'portfolio/**/images/**'
+      - 'assets/scripts/generate-gallery.js'
+      - 'assets/scripts/package.json'
 
 jobs:
   build:
