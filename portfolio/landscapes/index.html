@@ -190,10 +190,11 @@
       .then(images => {
         images.forEach(img => {
           const a = document.createElement('a');
-          a.href = `/portfolio/landscapes/images/${img}`;
-          a.dataset.src = a.href;
+          const imageUrl = `/portfolio/landscapes/images/${img.src}`;
+          a.href = imageUrl;
+          a.dataset.src = imageUrl;
           a.dataset.subHtml = `<h4>${img.title || ''}</h4>`;
-          a.innerHTML = `<img src="${a.href}" alt="${img}" />`;
+          a.innerHTML = `<img src="${imageUrl}" alt="${img.title || ''}" />`;
           galleryEl.appendChild(a);
         });
         lightGallery(galleryEl, { plugins: [lgZoom], selector: 'a' });
