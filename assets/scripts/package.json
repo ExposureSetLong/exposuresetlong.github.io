@@ -4,7 +4,7 @@
   "type": "module",
   "main": "generate-gallery.js",
   "scripts": {
-    "generate": "node generate-gallery.js"
+    "generate": "node generate-gallery.cjs"
   },
   "dependencies": {
     "exiftool-vendored": "^19.0.0",
