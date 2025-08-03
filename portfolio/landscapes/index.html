@@ -182,23 +182,33 @@
   <!-- LightGallery JS -->
   <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
-  <script>
-    const galleryEl = document.getElementById('gallery');
+ <script>
+  const galleryEl = document.getElementById('gallery');
 
-    fetch('/assets/scripts/gallery/landscapes.json')
-      .then(res => res.json())
-      .then(images => {
-        images.forEach(img => {
-          const a = document.createElement('a');
-          const imageUrl = `/portfolio/landscapes/images/${img.src}`;
-          a.href = imageUrl;
-          a.dataset.src = imageUrl;
-          a.dataset.subHtml = `<h4>${img.title || ''}</h4>`;
-          a.innerHTML = `<img src="${imageUrl}" alt="${img.title || ''}" />`;
-          galleryEl.appendChild(a);
-        });
-        lightGallery(galleryEl, { plugins: [lgZoom], selector: 'a' });
+  fetch('/assets/scripts/gallery/landscapes.json')
+    .then(res => res.json())
+    .then(images => {
+      images.forEach(img => {
+        const imageUrl = `/portfolio/landscapes/images/${encodeURIComponent(img.filename)}`;
+        const a = document.createElement('a');
+        a.href = imageUrl;
+        a.dataset.src = imageUrl;
+
+        // Use title and caption if available
+        const title = img.title ? `<h4>${img.title}</h4>` : '';
+        const caption = img.caption ? `<p>${img.caption.replace(/\n/g, '<br>')}</p>` : '';
+        a.dataset.subHtml = `${title}${caption}`;
+
+        a.innerHTML = `<img src="${imageUrl}" alt="${img.title || 'Landscape Photo'}" />`;
+        galleryEl.appendChild(a);
       });
-  </script>
+
+      lightGallery(galleryEl, {
+        plugins: [lgZoom],
+        selector: 'a',
+        download: false
+      });
+    });
+</script>
 </body>
 </html>
