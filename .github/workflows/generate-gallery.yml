@@ -8,6 +8,9 @@ on:
       - 'assets/scripts/package.json'
   workflow_dispatch:
 
+permissions:
+  contents: write  # ✅ This line is necessary for pushing changes
+
 jobs:
   build:
     runs-on: ubuntu-latest
