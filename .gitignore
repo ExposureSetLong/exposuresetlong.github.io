@@ -1,0 +1,9 @@
+# Node dependencies
+assets/scripts/node_modules/
+
+# macOS system files
+.DS_Store
+assets/scripts/.DS_Store
+portfolio/**/.DS_Store
+
+# Logs or
