@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Exposure Set Long</title>
   <link rel="canonical" href="https://exposuresetlong.com/about/" />
-  <meta name="description" content="Learn more about the photographer, gear, and copyright policies." />
+  <meta name="description" content="Explore the person, the gear, and copyright philosophy." />
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
   <link rel="icon" type="image/png" href="/assets/media/fav.ico" />
   <style>
     body {
@@ -64,31 +63,42 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      padding: 40px;
-      max-width: 1200px;
-      margin: auto;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      width: 100%;
+      max-width: 100%;
     }
 
     .grid-item {
       position: relative;
       overflow: hidden;
-      cursor: pointer;
+      aspect-ratio: 4 / 3;
     }
-    
+
     .grid-item img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
       display: block;
-      filter: grayscale(100%);
-      transition: filter 0.4s ease;
+      transition: transform 0.4s ease;
     }
-    
-    .grid-item:hover img {
-      filter: grayscale(0%);
+
+    .grid-item::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0);
+      transition: background 0.4s ease;
+      z-index: 1;
     }
-    
+
+    .grid-item:hover::after {
+      background: rgba(255, 255, 255, 0.9);
+    }
+
     .grid-item span {
       position: absolute;
       top: 50%;
@@ -100,31 +110,25 @@
       font-weight: bold;
       pointer-events: none;
       z-index: 2;
+      transition: color 0.4s ease;
     }
 
-    .grid-item::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.2);
-      z-index: 1;
-      transition: background 0.4s ease;
+    .grid-item:hover span {
+      color: #111;
+      font-weight: 800;
     }
-    
-    .grid-item:hover::after {
-      background: rgba(0, 0, 0, 0);
-    }
-
-
 
     footer {
       text-align: center;
       padding: 20px;
       font-size: 0.9em;
       color: #777;
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -153,18 +157,18 @@
     <p>Explore the person, the gear, and copyright philosophy</p>
   </section>
 
-  <!-- Thumbnails -->
+  <!-- Image Grid -->
   <section class="grid">
     <a class="grid-item" href="/about/me/">
-      <img src="/assets/media/yogesh.jpg" alt="About Me" />
+      <img src="/assets/media/yogesh.jpg" alt="About Me">
       <span>Me</span>
     </a>
     <a class="grid-item" href="/about/my-gear/">
-      <img src="/assets/media/my-gear.jpg" alt="My Gear" />
+      <img src="/assets/media/my-gear.jpg" alt="My Gear">
       <span>My Gear</span>
     </a>
     <a class="grid-item" href="/about/copyright/">
-      <img src="/assets/media/copyright.jpg" alt="Copyright Info" />
+      <img src="/assets/media/copyright.jpg" alt="Copyright Info">
       <span>Copyright</span>
     </a>
   </section>
