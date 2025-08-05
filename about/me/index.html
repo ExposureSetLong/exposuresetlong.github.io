@@ -52,24 +52,19 @@
       padding: 0 20px 60px;
     }
 
-    .photo-and-text {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .photo-and-text img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 8px;
-      align-self: flex-start;
-    }
-
     h1 {
       text-align: center;
       font-weight: 100;
       font-size: 2em;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .intro-img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto 30px;
     }
 
     blockquote {
@@ -120,21 +115,20 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 30px 20px 60px;
-      max-width: 900px;
-      margin: auto;
+      gap: 10px;
+      padding: 30px 0;
     }
 
     .grid-item {
       position: relative;
       overflow: hidden;
-      cursor: pointer;
+      aspect-ratio: 4 / 3;
     }
 
     .grid-item img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
       display: block;
       transition: transform 0.4s ease;
     }
@@ -146,13 +140,13 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(255, 255, 255, 0); /* transparent initially */
+      background: rgba(255, 255, 255, 0);
       transition: background 0.4s ease;
       z-index: 1;
     }
 
     .grid-item:hover::after {
-      background: rgba(255, 255, 255, 0.8); /* white overlay on hover */
+      background: rgba(255, 255, 255, 0.9);
     }
 
     .grid-item span {
@@ -163,7 +157,7 @@
       font-size: 1.4em;
       color: white;
       text-shadow: 0 0 5px #000;
-      font-weight: bold;
+      font-weight: 600;
       pointer-events: none;
       z-index: 2;
       transition: color 0.4s ease;
@@ -171,7 +165,7 @@
 
     .grid-item:hover span {
       color: #111;
-      font-weight: 800;
+      font-weight: 700;
     }
 
     footer {
@@ -204,22 +198,21 @@
   <!-- Main Content -->
   <main>
     <h1>Me</h1>
-    <div class="photo-and-text">
-      <img src="/assets/media/yogesh.jpg" alt="Yogesh Mhatre" />
-      <blockquote>
-        You don't take a photograph, you make it
-        <cite>– Ansel Adams</cite>
-      </blockquote>
-      
-      <div class="bio-text">
-        <p>Heya! Thanks for stopping by here and reading about me. I'm Yogesh, mostly referred as Yogi, and I love Long Exposure Photography. I have created this page to showcase my take on photography of various genres, but mostly one that involves long exposures.</p>
+    <img src="/assets/media/yogesh.jpg" alt="Yogesh Mhatre" class="intro-img" />
 
-        <p>At the heart of it all, I'm a simple person, always trying hard to make life simple. Growing up, I always felt attracted to Art, whether it was just doing sketches or taking pictures from a film camera that my dad had. I knew I would pursue art at some stage of my life and come December 2009; I bought myself my very own camera. Years passed and this hobby of photography turned into a passion. Of all kinds of photography that I do (yeah, I take photos of almost anything), long exposure photography became my favorite type of photography. However, I'm also deeply passionate about astronomical shots and have a long-running desire to capture the light that is hundreds of light years away from us.</p>
+    <blockquote>
+      You don't take a photograph, you make it
+      <cite>– Ansel Adams</cite>
+    </blockquote>
 
-        <p>By day, I'm an engineer working for one of the leading cloud provider - Amazon Web Services. I always had a keen interest in computers and systems and this job satisfies my techy need besides providing me my bread to eat and water to drink. Come Sunsets (and sometimes Sunrises), I wear Photographers hat (or vest) and go on exploring unseen locations which I can reimagine and paint with a camera as a brush. Exploring, scouting, and then capturing the lights and precious moments through my lens is truly something I enjoy.</p>
+    <div class="bio-text">
+      <p>Heya! Thanks for stopping by here and reading about me. I'm Yogesh, mostly referred as Yogi, and I love Long Exposure Photography. I have created this page to showcase my take on photography of various genres, but mostly one that involves long exposures.</p>
 
-        <p>By night, I take on a very different route. I like to capture the light that is hundreds and thousands of light years away. From time to time, I try to escape the urban life and go in a remote places that open your eyes to the whole different world. Framed by stunning night skies and mountains, I like to point my lens to the distance and capture a sky full of stars. Astrophotography has been an emerging passion for me. The stars and the deep sky objects evoke a sense of freedom for me, and as the years to come, I’ve plans to spend countless nights, camped beneath the night sky, just so that I would return home with once-in-a-lifetime views. A view that may be forever treasured in the walls of your homes for years to come.</p>
-      </div>
+      <p>At the heart of it all, I'm a simple person, always trying hard to make life simple. Growing up, I always felt attracted to Art, whether it was just doing sketches or taking pictures from a film camera that my dad had. I knew I would pursue art at some stage of my life and come December 2009; I bought myself my very own camera. Years passed and this hobby of photography turned into a passion. Of all kinds of photography that I do (yeah, I take photos of almost anything), long exposure photography became my favorite type of photography. However, I'm also deeply passionate about astronomical shots and have a long-running desire to capture the light that is hundreds of light years away from us.</p>
+
+      <p>By day, I'm an engineer working for one of the leading cloud provider - Amazon Web Services. I always had a keen interest in computers and systems and this job satisfies my techy need besides providing me my bread to eat and water to drink. Come Sunsets (and sometimes Sunrises), I wear Photographers hat (or vest) and go on exploring unseen locations which I can reimagine and paint with a camera as a brush. Exploring, scouting, and then capturing the lights and precious moments through my lens is truly something I enjoy.</p>
+
+      <p>By night, I take on a very different route. I like to capture the light that is hundreds and thousands of light years away. From time to time, I try to escape the urban life and go in a remote places that open your eyes to the whole different world. Framed by stunning night skies and mountains, I like to point my lens to the distance and capture a sky full of stars. Astrophotography has been an emerging passion for me. The stars and the deep sky objects evoke a sense of freedom for me, and as the years to come, I’ve plans to spend countless nights, camped beneath the night sky, just so that I would return home with once-in-a-lifetime views. A view that may be forever treasured in the walls of your homes for years to come.</p>
     </div>
 
     <!-- You may also like -->
