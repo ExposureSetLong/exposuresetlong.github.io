@@ -6,7 +6,7 @@
   <title>About | Exposure Set Long</title>
   <link rel="canonical" href="https://exposuresetlong.com/about/" />
   <meta name="description" content="Explore the person, the gear, and copyright philosophy." />
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="icon" type="image/png" href="/assets/media/fav.ico" />
   <style>
@@ -64,9 +64,8 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 0;
-      width: 100%;
-      max-width: 100%;
+      gap: 10px;
+      padding: 0 50px 60px;
     }
 
     .grid-item {
@@ -90,13 +89,13 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(255, 255, 255, 0);
+      background: rgba(255, 255, 255, 0); /* transparent initially */
       transition: background 0.4s ease;
       z-index: 1;
     }
 
     .grid-item:hover::after {
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.9); /* white overlay on hover */
     }
 
     .grid-item span {
@@ -104,18 +103,18 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 1.4em;
+      font-size: 1.6em;
       color: white;
       text-shadow: 0 0 5px #000;
-      font-weight: bold;
+      font-weight: 600;
       pointer-events: none;
       z-index: 2;
-      transition: color 0.4s ease;
+      transition: color 0.4s ease, font-weight 0.4s ease;
     }
 
     .grid-item:hover span {
       color: #111;
-      font-weight: 800;
+      font-weight: 700;
     }
 
     footer {
@@ -128,6 +127,7 @@
     @media (max-width: 768px) {
       .grid {
         grid-template-columns: 1fr;
+        padding: 0 20px 40px;
       }
     }
   </style>
