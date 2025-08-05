@@ -104,17 +104,18 @@
       left: 50%;
       transform: translate(-50%, -50%);
       font-size: 1.6em;
-      color: white;
-      font-weight: 600;
-      pointer-events: none;
-      z-index: 2;
-      transition: color 0.4s ease, font-weight 0.4s ease;
-    }
-
-    .grid-item:hover span {
       color: #111;
       font-weight: 700;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 2;
+      pointer-events: none;
     }
+    
+    .grid-item:hover span {
+      opacity: 1;
+    }
+
 
     footer {
       text-align: center;
