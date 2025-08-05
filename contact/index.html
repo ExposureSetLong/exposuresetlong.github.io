@@ -1,1 +1,175 @@
-<!-- Dummy content for index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – Exposure Set Long</title>
+  <link rel="stylesheet" href="/assets/scripts/global.css" />
+  <link rel="icon" href="/assets/media/signature-logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Fira Sans', sans-serif;
+      background-color: #fff;
+      color: #222;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    header, footer {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    #contact {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    #contact h1 {
+      font-weight: 100;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    label {
+      font-weight: 500;
+    }
+
+    input, textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      background-color: #222;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #444;
+    }
+
+    /* Toast notification styles */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(100%);
+      background: #222;
+      color: #fff;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      font-weight: 500;
+      opacity: 0;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      z-index: 999;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .toast.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="/"><img src="/assets/media/signature-logo.png" alt="Exposure Set Long" height="60" /></a>
+    <nav>
+      <a href="/">Portfolio</a> |
+      <a href="/about/me">About</a> |
+      <a href="/contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="contact">
+    <h1>Contact Me</h1>
+
+    <form id="contact-form" action="https://formbold.com/s/6rXZb" method="POST">
+      <!-- Honeypot field -->
+      <input type="text" name="bot-field" style="display: none;" autocomplete="off" />
+
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Yogesh Mhatre – Exposure Set Long</p>
+  </footer>
+
+  <!-- Toast notification -->
+  <div id="toast" class="toast hidden">Your message has been sent successfully!</div>
+
+  <script>
+    const form = document.getElementById("contact-form");
+    const toast = document.getElementById("toast");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const honeypot = formData.get("bot-field");
+      if (honeypot) return;
+
+      try {
+        const res = await fetch(form.action, {
+          method: "POST",
+          body: formData
+        });
+
+        if (res.ok) {
+          form.reset();
+          showToast("✅ Your message has been sent!");
+        } else {
+          showToast("❌ Something went wrong. Please try again.", true);
+        }
+      } catch (err) {
+        showToast("⚠️ Error sending message. Please check your connection.", true);
+      }
+    });
+
+    function showToast(message, isError = false) {
+      toast.textContent = message;
+      toast.style.backgroundColor = isError ? "#a10000" : "#222";
+      toast.classList.remove("hidden");
+      toast.classList.add("show");
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+        toast.classList.add("hidden");
+      }, 5000);
+    }
+  </script>
+</body>
+</html>
