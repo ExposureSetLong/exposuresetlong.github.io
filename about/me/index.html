@@ -3,92 +3,211 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About — Exposure Set Long</title>
-  <link rel="stylesheet" href="/assets/scripts/styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100&display=swap" rel="stylesheet">
+  <title>About Me | Exposure Set Long</title>
+  <link rel="canonical" href="https://exposuresetlong.com/about/me/" />
+  <meta name="description" content="Meet Yogesh, the person behind Exposure Set Long. Engineer by day, astrophotographer by night." />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="icon" type="image/png" href="/assets/media/fav.ico" />
   <style>
     body {
       margin: 0;
       font-family: 'Fira Sans', sans-serif;
-      background-color: #fff;
-      color: #222;
+      background: #111;
+      color: white;
+      line-height: 1.6;
     }
 
     header {
-      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #f7f7f7;
+      padding: 10px 30px;
+      background: #111;
     }
 
-    .logo {
-      height: 100px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .nav-links a {
+    .nav-left a,
+    .nav-right a {
+      color: white;
       text-decoration: none;
-      color: #222;
+      margin-right: 20px;
       font-weight: 100;
     }
 
-    .gallery-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-      padding: 3rem 1rem;
+    .nav-left a.active {
+      font-weight: bold;
     }
 
-    .gallery-grid a {
-      display: block;
-      width: 300px;
+    .nav-center img {
+      height: 80px;
+    }
+
+    .nav-right a {
+      font-size: 1.2em;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
       text-align: center;
-      transition: transform 0.2s ease;
     }
 
-    .gallery-grid a:hover {
-      transform: scale(1.05);
+    main img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 6px;
+      margin: 20px 0;
     }
 
-    .gallery-grid img {
+    blockquote {
+      font-style: italic;
+      color: #ccc;
+      margin: 30px auto;
+      font-size: 1.3em;
+    }
+
+    blockquote::before {
+      content: "“";
+      font-size: 2em;
+      vertical-align: middle;
+      color: #888;
+    }
+
+    blockquote::after {
+      content: "”";
+      font-size: 2em;
+      vertical-align: middle;
+      color: #888;
+    }
+
+    blockquote cite {
+      display: block;
+      font-size: 0.9em;
+      margin-top: 10px;
+      color: #777;
+    }
+
+    .bio-text {
+      text-align: justify;
+      margin-top: 30px;
+      font-size: 1.05em;
+      font-weight: 100;
+    }
+
+    .you-may-also-like {
+      margin-top: 60px;
+      text-align: center;
+      font-size: 1.3em;
+      font-weight: 100;
+      color: #aaa;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 30px 20px 60px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .grid-item {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .grid-item img {
       width: 100%;
       height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: block;
+      filter: grayscale(100%);
+      transition: filter 0.4s ease;
+    }
+
+    .grid-item:hover img {
+      filter: grayscale(0%);
+    }
+
+    .grid-item span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.4em;
+      color: white;
+      text-shadow: 0 0 5px #000;
+      font-weight: bold;
+      pointer-events: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #777;
     }
   </style>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
-    <a href="/"><img src="/assets/signature-logo.png" alt="Exposure Set Long Logo" class="logo" /></a>
-    <nav class="nav-links">
-      <a href="/portfolio">Portfolio</a>
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a>
-    </nav>
+    <div class="nav-left">
+      <a href="/portfolio/">Portfolio</a>
+      <a href="/contact/">Contact</a>
+      <a href="/about/" class="active">About</a>
+    </div>
+    <div class="nav-center">
+      <a href="/"><img src="/assets/media/signature-logo.png" alt="Home" /></a>
+    </div>
+    <div class="nav-right">
+      <a href="https://facebook.com/ExposureSetLong" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/exposuresetlong/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.flickr.com/photos/exposuresetlong/" target="_blank"><i class="fab fa-flickr"></i></a>
+    </div>
   </header>
 
+  <!-- Main Content -->
   <main>
-    <section class="gallery-grid">
-      <a href="/about/me">
-        <img src="/assets/media/yogesh.jpg" alt="About Me" />
-      </a>
-      <a href="/about/my-gear">
+    <h1>Me</h1>
+    <img src="/assets/media/yogesh.jpg" alt="Yogesh Mhatre" />
+
+    <blockquote>
+      You don't take a photograph, you make it
+      <cite>– Ansel Adams</cite>
+    </blockquote>
+
+    <div class="bio-text">
+      <p>Heya! Thanks for stopping by here and reading about me. I'm Yogesh, mostly referred as Yogi, and I love Long Exposure Photography. I have created this page to showcase my take on photography of various genres, but mostly one that involves long exposures.</p>
+
+      <p>At the heart of it all, I'm a simple person, always trying hard to make life simple. Growing up, I always felt attracted to Art, whether it was just doing sketches or taking pictures from a film camera that my dad had. I knew I would pursue art at some stage of my life and come December 2009; I bought myself my very own camera. Years passed and this hobby of photography turned into a passion. Of all kinds of photography that I do (yeah, I take photos of almost anything), long exposure photography became my favorite type of photography. However, I'm also deeply passionate about astronomical shots and have a long-running desire to capture the light that is hundreds of light years away from us.</p>
+
+      <p>By day, I'm an engineer working for one of the leading cloud provider - Amazon Web Services. I always had a keen interest in computers and systems and this job satisfies my techy need besides providing me my bread to eat and water to drink. Come Sunsets (and sometimes Sunrises), I wear Photographers hat (or vest) and go on exploring unseen locations which I can reimagine and paint with a camera as a brush. Exploring, scouting, and then capturing the lights and precious moments through my lens is truly something I enjoy.</p>
+
+      <p>By night, I take on a very different route. I like to capture the light that is hundreds and thousands of light years away. From time to time, I try to escape the urban life and go in a remote places that open your eyes to the whole different world. Framed by stunning night skies and mountains, I like to point my lens to the distance and capture a sky full of stars. Astrophotography has been an emerging passion for me. The stars and the deep sky objects evoke a sense of freedom for me, and as the years to come, I’ve plans to spend countless nights, camped beneath the night sky, just so that I would return home with once-in-a-lifetime views. A view that may be forever treasured in the walls of your homes for years to come.</p>
+    </div>
+
+    <!-- You may also like -->
+    <div class="you-may-also-like">You may also like</div>
+    <section class="grid">
+      <a class="grid-item" href="/about/my-gear/">
         <img src="/assets/media/my-gear.jpg" alt="My Gear" />
+        <span>My Gear</span>
       </a>
-      <a href="/about/copyright">
+      <a class="grid-item" href="/about/copyright/">
         <img src="/assets/media/copyright.jpg" alt="Copyright" />
+        <span>Copyright</span>
       </a>
     </section>
   </main>
+
+  <!-- Footer -->
+  <footer>
+    © Yogesh Mhatre — Exposure Set Long
+  </footer>
+
 </body>
 </html>
