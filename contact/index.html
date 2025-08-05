@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="icon" type="image/png" href="/assets/media/fav.ico" />
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <style>
     body {
       margin: 0;
@@ -86,20 +87,25 @@
     }
 
     button {
-      padding: 0.75rem;
+      padding: 0.75rem 2rem;
       font-size: 1rem;
       background-color: #444;
       color: white;
       border: none;
       border-radius: 6px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, transform 0.2s ease;
       width: fit-content;
       align-self: center;
     }
 
     button:hover {
       background-color: #666;
+      transform: scale(1.05);
+    }
+
+    .g-recaptcha {
+      align-self: center;
     }
 
     .toast {
@@ -170,6 +176,8 @@
     <label for="message">Message *</label>
     <textarea id="message" name="message" placeholder="Your Message..." rows="6" required></textarea>
 
+    <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+
     <button type="submit">Submit</button>
   </form>
 
@@ -185,9 +193,18 @@
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
+
       const formData = new FormData(form);
       const honeypot = formData.get("bot-field");
       if (honeypot) return;
+
+      const recaptcha = grecaptcha.getResponse();
+      if (!recaptcha) {
+        showToast("⚠️ Please complete the CAPTCHA.", true);
+        return;
+      }
+
+      formData.append("g-recaptcha-response", recaptcha);
 
       try {
         const res = await fetch(form.action, {
@@ -197,6 +214,7 @@
 
         if (res.ok) {
           form.reset();
+          grecaptcha.reset();
           showToast("✅ Your message has been sent!");
         } else {
           showToast("❌ Something went wrong. Please try again.", true);
