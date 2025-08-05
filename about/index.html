@@ -76,7 +76,7 @@
       overflow: hidden;
       cursor: pointer;
     }
-
+    
     .grid-item img {
       width: 100%;
       height: auto;
@@ -84,11 +84,11 @@
       filter: grayscale(100%);
       transition: filter 0.4s ease;
     }
-
+    
     .grid-item:hover img {
       filter: grayscale(0%);
     }
-
+    
     .grid-item span {
       position: absolute;
       top: 50%;
@@ -99,7 +99,9 @@
       text-shadow: 0 0 5px #000;
       font-weight: bold;
       pointer-events: none;
+      z-index: 2;
     }
+
 
     footer {
       text-align: center;
