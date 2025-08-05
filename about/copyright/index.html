@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Copyright | Exposure Set Long</title>
+  <link rel="canonical" href="https://exposuresetlong.com/about/copyright/" />
+  <meta name="description" content="Copyright information for Exposure Set Long. All images and videos are protected by international copyright laws." />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="/assets/media/fav.ico" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Fira Sans', sans-serif;
+      background: #111;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      background: #111;
+    }
+
+    .nav-left a,
+    .nav-right a {
+      color: white;
+      text-decoration: none;
+      margin-right: 20px;
+      font-weight: 100;
+    }
+
+    .nav-left a.active {
+      font-weight: bold;
+    }
+
+    .nav-center img {
+      height: 80px;
+    }
+
+    .nav-right a {
+      font-size: 1.2em;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px 60px;
+    }
+
+    h1 {
+      text-align: center;
+      font-weight: 100;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .copyright-img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto 30px;
+    }
+
+    .copyright-text {
+      font-size: 1.05em;
+      font-weight: 100;
+      text-align: justify;
+      color: #ccc;
+    }
+
+    .you-may-also-like {
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    .you-may-also-like h2 {
+      font-size: 1.6em;
+      font-weight: 100;
+      color: #aaa;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 10px;
+    }
+
+    .grid-item {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+    }
+
+    .grid-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .grid-item::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0);
+      transition: background 0.4s ease;
+      z-index: 1;
+    }
+
+    .grid-item:hover::after {
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .grid-item span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.4em;
+      color: #111;
+      font-weight: 700;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .grid-item:hover span {
+      opacity: 1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-left">
+      <a href="/portfolio/">Portfolio</a>
+      <a href="/contact/">Contact</a>
+      <a href="/about/" class="active">About</a>
+    </div>
+    <div class="nav-center">
+      <a href="/"><img src="/assets/media/signature-logo.png" alt="Home" /></a>
+    </div>
+    <div class="nav-right">
+      <a href="https://facebook.com/ExposureSetLong" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/exposuresetlong/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.flickr.com/photos/exposuresetlong/" target="_blank"><i class="fab fa-flickr"></i></a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <h1>Copyright</h1>
+    <img src="/assets/media/copyright.jpg" alt="Copyright Symbol" class="copyright-img" />
+
+    <div class="copyright-text">
+      <p>The Images and Videos on this page — exposuresetlong.com and its subdomains are the properties of Yogesh Mhatre and protected under United States of America and International copyright laws.</p>
+
+      <p>Copying, Duplicating, Saving as a Digital file, Printing, Publishing in form of media including Web, Manipulating, Transmitting or Reproducing without the prior written permission of Yogesh Mhatre is strictly forbidden and would constitute a breach of Copyright.</p>
+
+      <p>If you need to license my image for a particular project, please get in touch with me using the Contact form from the Menu.</p>
+    </div>
+
+    <!-- You may also like -->
+    <section class="you-may-also-like">
+      <h2>You may also like</h2>
+      <div class="grid">
+        <a class="grid-item" href="/about/me/">
+          <img src="/assets/media/yogesh.jpg" alt="Me">
+          <span>Me</span>
+        </a>
+        <a class="grid-item" href="/about/my-gear/">
+          <img src="/assets/media/my-gear.jpg" alt="My Gear">
+          <span>My Gear</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    © Yogesh Mhatre — Exposure Set Long
+  </footer>
+
+</body>
+</html>
