@@ -3,92 +3,99 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About — Exposure Set Long</title>
-  <link rel="stylesheet" href="/assets/scripts/styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100&display=swap" rel="stylesheet">
+  <title>About | Exposure Set Long</title>
+  <link rel="canonical" href="https://exposuresetlong.com/about/" />
+  <meta name="description" content="Learn more about the photographer, gear, and copyright policies." />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="icon" type="image/png" href="/assets/media/fav.ico" />
   <style>
     body {
       margin: 0;
       font-family: 'Fira Sans', sans-serif;
-      background-color: #fff;
-      color: #222;
+      background: #111;
+      color: white;
     }
 
     header {
-      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #f7f7f7;
+      padding: 10px 30px;
+      background: #111;
     }
 
-    .logo {
-      height: 100px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .nav-links a {
+    .nav-left a,
+    .nav-right a {
+      color: white;
       text-decoration: none;
-      color: #222;
+      margin-right: 20px;
       font-weight: 100;
     }
 
-    .gallery-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-      padding: 3rem 1rem;
+    .nav-left a.active {
+      font-weight: bold;
     }
 
-    .gallery-grid a {
-      display: block;
-      width: 300px;
+    .nav-center img {
+      height: 80px;
+    }
+
+    .nav-right a {
+      font-size: 1.2em;
+    }
+
+    .hero {
       text-align: center;
-      transition: transform 0.2s ease;
+      padding: 50px 20px 30px;
     }
 
-    .gallery-grid a:hover {
-      transform: scale(1.05);
+    .hero h1 {
+      font-size: 2.5em;
+      font-weight: 100;
     }
 
-    .gallery-grid img {
+    .hero p {
+      font-size: 1.1em;
+      color: #aaa;
+      font-weight: 100;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .grid-item {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .grid-item img {
       width: 100%;
       height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: block;
+      filter: grayscale(100%);
+      transition: filter 0.4s ease;
     }
-  </style>
-</head>
-<body>
-  <header>
-    <a href="/"><img src="/assets/signature-logo.png" alt="Exposure Set Long Logo" class="logo" /></a>
-    <nav class="nav-links">
-      <a href="/portfolio">Portfolio</a>
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a>
-    </nav>
-  </header>
 
-  <main>
-    <section class="gallery-grid">
-      <a href="/about/me">
-        <img src="/assets/media/yogesh.jpg" alt="About Me" />
-      </a>
-      <a href="/about/my-gear">
-        <img src="/assets/media/my-gear.jpg" alt="My Gear" />
-      </a>
-      <a href="/about/copyright">
-        <img src="/assets/media/copyright.jpg" alt="Copyright" />
-      </a>
-    </section>
-  </main>
-</body>
-</html>
+    .grid-item:hover img {
+      filter: grayscale(0%);
+    }
+
+    .grid-item span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.4em;
+      color: white;
+      text-shadow: 0 0 5px #000;
+      font-weight: bold;
+      pointer-ev
