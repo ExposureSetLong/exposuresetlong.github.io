@@ -24,10 +24,10 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 30px;
+      padding: 10px 30px;
       background: #111;
     }
-
+    
     .nav-left a,
     .nav-right a {
       color: white;
@@ -35,18 +35,20 @@
       margin-right: 20px;
       font-weight: 100;
     }
-
-    .nav-left a.active {
-      font-weight: bold;
-    }
-
+    
     .nav-center img {
       height: 80px;
+      display: block;
+      margin: 0; /* prevent image baseline shift */
     }
-
+    
     .nav-right a {
       font-size: 1.2em;
-      margin-left: 12px;
+      margin-left: 15px;
+    }
+
+    .nav-left a.active {
+      font-weight: 600;  /* Or 700 for bolder */
     }
 
     .hero {
@@ -156,7 +158,7 @@
   <section class="you-may-also-like">
     <h2>You may also like</h2>
     <div class="grid">
-      <a class="grid-item" href="/portfolio/astrophotography/">
+      <a class="grid-item" href="/portfolio/landscapes/">
         <img src="/assets/media/landscapes-thumb.jpg" alt="Landscapes">
         <span>Landscapes</span>
       </a>
