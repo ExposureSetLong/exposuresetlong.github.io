@@ -192,7 +192,7 @@
     .then(res => res.json())
     .then(images => {
       images.forEach(img => {
-        const imageUrl = `/portfolio/astrophotogaphy/images/${encodeURIComponent(img.filename)}`;
+        const imageUrl = `/portfolio/astrophotography/images/${encodeURIComponent(img.filename)}`;
         const a = document.createElement('a');
         a.href = imageUrl;
         a.dataset.src = imageUrl;
