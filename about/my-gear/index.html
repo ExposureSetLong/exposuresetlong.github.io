@@ -25,7 +25,7 @@
       padding: 10px 30px;
       background: #111;
     }
-
+    
     .nav-left a,
     .nav-right a {
       color: white;
@@ -33,17 +33,20 @@
       margin-right: 20px;
       font-weight: 100;
     }
-
-    .nav-left a.active {
-      font-weight: bold;
-    }
-
+    
     .nav-center img {
       height: 80px;
+      display: block;
+      margin: 0; /* prevent image baseline shift */
     }
-
+    
     .nav-right a {
       font-size: 1.2em;
+      margin-left: 15px;
+    }
+
+    .nav-left a.active {
+      font-weight: 600;  /* Or 700 for bolder */
     }
 
     main {
