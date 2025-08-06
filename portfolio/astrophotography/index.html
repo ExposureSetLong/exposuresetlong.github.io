@@ -202,7 +202,7 @@
         const caption = img.caption ? `<p>${img.caption.replace(/\n/g, '<br>')}</p>` : '';
         a.dataset.subHtml = `${title}${caption}`;
 
-        a.innerHTML = `<img src="${imageUrl}" alt="${img.title || 'Landscape Photo'}" />`;
+        a.innerHTML = `<img src="${imageUrl}" alt="${img.title || 'Astro Photography'}" />`;
         galleryEl.appendChild(a);
       });
 
